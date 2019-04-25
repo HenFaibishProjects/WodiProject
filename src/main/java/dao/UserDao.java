@@ -5,7 +5,7 @@ import java.sql.SQLException;
 
 public interface UserDao {
 
-        void addUser(String loginname, String password,String firstname, String lastname, String gender,
+        void addUser(String eMailAddress, String password,String firstname, String lastname, String gender,
                   String address1, String address2, String city, int zipCode, String region, String country);
 
          void deleteByid(String OfficialId) throws ClassNotFoundException, SQLException;

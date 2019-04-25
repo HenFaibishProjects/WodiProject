@@ -1,6 +1,7 @@
 package Login;
 
 import Connections.JdbcDbData;
+import javafx.ActionScreenController;
 import javafx.scene.control.Alert;
 
 import java.sql.PreparedStatement;
@@ -13,7 +14,7 @@ public class SystemLogin extends JdbcDbData {
 
     public static int sessionId;
 
-    public static int run(String loginname, String password) throws SQLException {
+    public static int run(String loginname, String password) throws Exception {
         try {
             JdbcDbDataa();
         } catch (ClassNotFoundException e) {
@@ -37,6 +38,7 @@ public class SystemLogin extends JdbcDbData {
                     ResultSet rsId = stId.executeQuery();
                      while(rsId.next()) {
                          sessionId = rsId.getInt("id");
+                         ActionScreenController actionScreenController = new ActionScreenController();
                         return rsId.getInt("id");
                     }
                 }

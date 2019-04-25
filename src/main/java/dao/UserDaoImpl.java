@@ -13,8 +13,8 @@ public class UserDaoImpl extends HibernateStructInfo implements UserDao {
     }
 
     @Override
-    public void addUser(String loginname, String password,String firstname, String lastname, String gender, String address1, String address2, String city, int zipCode, String region, String country) {
-        UserPassword userPassword = new UserPassword(loginname,password);
+    public void addUser(String eMailAddress, String password,String firstname, String lastname, String gender, String address1, String address2, String city, int zipCode, String region, String country) {
+        UserPassword userPassword = new UserPassword(eMailAddress,password);
         Address address = new Address(address1,address2,city,zipCode,region,"Israel");
         UserWido user = new UserWido(firstname,lastname,gender,address,userPassword);
         beginTranscation();

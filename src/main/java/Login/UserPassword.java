@@ -9,11 +9,11 @@ public class UserPassword {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
-    private String loginname;
+    private String eMailAddress;
     private String password;
 
     public UserPassword(String loginname, String password) {
-        this.loginname = loginname;
+        this.eMailAddress = loginname;
         this.password = password;
     }
 
@@ -25,12 +25,12 @@ public class UserPassword {
         return id;
     }
 
-    public String getLoginname() {
-        return loginname;
+    public String getEMailAddress() {
+        return eMailAddress;
     }
 
-    public void setLoginname(String loginname) {
-        this.loginname = loginname;
+    public void setEMailAddress(String loginname) {
+        this.eMailAddress = loginname;
     }
 
     public String getPassword() {

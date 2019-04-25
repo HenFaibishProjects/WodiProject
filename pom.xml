@@ -67,7 +67,11 @@
         <artifactId>weixin-java-miniapp</artifactId>
           <version>3.3.7.B</version>
     </dependency>
-
+    <dependency>
+        <groupId>commons-validator</groupId>
+        <artifactId>commons-validator</artifactId>
+        <version>1.4.1</version>
+    </dependency>
     <dependency>
         <groupId>com.vdurmont</groupId>
         <artifactId>emoji-java</artifactId>

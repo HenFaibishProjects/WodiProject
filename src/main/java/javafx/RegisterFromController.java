@@ -2,13 +2,16 @@ package javafx;
 
 import com.alee.utils.TextUtils;
 import dao.UserDaoImpl;
-import javafx.application.Application;
+import hr.SendMail;
+import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.stage.Stage;
+import javafx.scene.effect.DropShadow;
+import org.apache.commons.validator.routines.EmailValidator;
+
+import javax.mail.internet.AddressException;
+import javax.mail.internet.InternetAddress;
 
 public class RegisterFromController  {
 
@@ -34,10 +37,13 @@ public class RegisterFromController  {
     public ComboBox maleFemale;
     @FXML
     public Button backToLogin;
+    @FXML
+    public Button exitprogram;
 
 
 
-    public  void registermyaccount(){
+
+    public  void registermyaccount() throws AddressException {
         verifyNonEmptyValues(maleFemale,
                 theusername.getText(),
                 thepassword.getText(),
@@ -52,10 +58,13 @@ public class RegisterFromController  {
 
     public  void backToLoginAction(){
         LoginToAppController.closeRegWindow();
-        LoginDemoApplication.OpenWindow();
+        StartUpTheProgram.OpenWindow();
     }
 
-    private void verifyNonEmptyValues(ComboBox maleFemaleObject,String theusername, String thepassword, String theConfirmpassword, String thefirstname, String thelastname, String thestreet , String theCity) {
+    private void verifyNonEmptyValues(ComboBox maleFemaleObject,String theusername, String thepassword, String theConfirmpassword, String thefirstname, String thelastname, String thestreet , String theCity) throws AddressException {
+
+        InternetAddress emailAddr = new InternetAddress(theusername);
+
 
         if (maleFemaleObject.getSelectionModel().getSelectedItem()==null) {
             alertEmptyFilled();
@@ -69,8 +78,14 @@ public class RegisterFromController  {
                 if (!(thepassword.equals(theConfirmpassword))) {
                     alertPasswordDontMatch();
                 } else {
+                    if(!(EmailValidator.getInstance().isValid(theusername))){
+                        alertValidEmailAddress();
+                    }
+                    else {
                     setRegistermyaccount();
+                        SendMail.sendTheEmail("WodiSoftware@gmail.com",theusername,"Welcome To Wodi","We are welcome you with Wodi account");
                 }
+            }
             }
         }
     }
@@ -88,15 +103,23 @@ public class RegisterFromController  {
         alert.showAndWait();
     }
 
+    private void alertValidEmailAddress() {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setHeaderText("Please enter a valid email address!");
+        alert.showAndWait();
+    }
+
     public  void setRegistermyaccount(){
         LoginToAppController.disableRegWindow();
         UserDaoImpl userDaoImpl = new UserDaoImpl();
         userDaoImpl.addUser(theusername.getText(),thepassword.getText(),thefirstname.getText(),thelastname.getText(),maleFemale.getSelectionModel().getSelectedItem().toString(),thestreet.getText()," ",thecity.getText(),0000,"","");
         LoginToAppController.closeRegWindow();
         LoginToAppController.waitForResitretionToBeComplited();
-        LoginDemoApplication.OpenWindow();
+        StartUpTheProgram.OpenWindow();
     }
 
 
-
+    public void exitTheProgram(ActionEvent actionEvent) {
+        Platform.exit();
+    }
 }

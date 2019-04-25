@@ -45,7 +45,7 @@ public class StartNg {
 
 
     @Test (enabled = true)
-    public void login() throws SQLException, ClassNotFoundException {
+    public void login() throws Exception {
         SystemLogin.run("henlogin","mypassword");
     }
 }

@@ -8,7 +8,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 
-public class LoginDemoApplication extends Application  {
+public class StartUpTheProgram extends Application  {
     public static Stage Pstage;
 
     public static void main(String[] args) {
@@ -20,7 +20,8 @@ public class LoginDemoApplication extends Application  {
 
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/LoginToApp.fxml"));
         Scene scene = new Scene(root, 800, 600);
-        stage.setTitle("FXML Welcome");
+        stage.setTitle("Workout Activity Diary");
+        scene.getStylesheets().add("/MistSilverSkin.css");
         stage.setScene(scene);
         Pstage = stage;
         stage.show();

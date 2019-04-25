@@ -5,32 +5,30 @@ package javafx;
 import Login.SystemLogin;
 
 
-import javafx.event.*;
-import javafx.event.ActionEvent;
+import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Group;
-import javafx.scene.Node;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.TilePane;
+import javafx.scene.effect.Bloom;
+import javafx.scene.effect.DropShadow;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-import java.awt.*;
-import java.awt.event.*;
-
-import java.io.IOException;
 import java.sql.SQLException;
 
 
-public class LoginToAppController  {
+public class LoginToAppController   {
 
     @FXML
     public TextField userName;
@@ -40,13 +38,12 @@ public class LoginToAppController  {
     public Button loginButton;
     @FXML
     public Button createNewAccount;
-    @FXML
-    private ComboBox comboBox;
+
 
     public static Stage RegStage;
     static double ii = 0;
 
-    public void tryLogon() {
+    public void tryLogon() throws Exception {
             try {
              SystemLogin.run(userName.getText(), password.getText());
              } catch (SQLException e) {
@@ -58,13 +55,23 @@ public class LoginToAppController  {
     public void registermyaccount() throws Exception{
         {
             closeWindows();
+            VBox mainRegisterWindow = new VBox();
+            mainRegisterWindow.setAlignment(Pos.TOP_CENTER);
+            Text t = new Text();
+            t.setFill(Color.ORANGERED);
+            t.setText("Register Form - Wido Software");
+            t.setStyle("-fx-font: 24 arial;");
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/RegisterFrom.fxml"));
-            Parent root1 = (Parent) fxmlLoader.load();
+            VBox root1 = (VBox) fxmlLoader.load();
             Stage stage = new Stage();
             stage.initModality(Modality.APPLICATION_MODAL);
             stage.initStyle(StageStyle.UNDECORATED);
-            stage.setScene(new Scene(root1));
-            stage.setTitle("hello");
+            mainRegisterWindow.getChildren().addAll(t,root1);
+            Scene scene = new Scene(mainRegisterWindow);
+            stage.setScene(scene);
+            scene.getStylesheets().add("/MistSilverSkin.css");
+            stage.setTitle("Workout Activity Diary - Registration Form");
+            stage.initStyle(StageStyle.DECORATED);
             RegStage = stage;
             stage.show();
 
@@ -72,7 +79,7 @@ public class LoginToAppController  {
     }
 
     public void closeWindows()  {
-        LoginDemoApplication.closeWindow();
+        StartUpTheProgram.closeWindow();
 
         }
 
@@ -98,7 +105,8 @@ public class LoginToAppController  {
 
         }
 
-    }
+
+}
 
 
 

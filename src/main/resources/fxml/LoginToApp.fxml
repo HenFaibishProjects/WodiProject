@@ -9,10 +9,10 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-
 <?import javafx.scene.control.PasswordField?>
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.LoginToAppController">
-  <children>
+
+<VBox id="vbox" prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.LoginToAppController">
+    <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <children>
         <Label alignment="CENTER" layoutX="155.0" layoutY="177.0" style="&#10;" text="" textAlignment="CENTER" textFill="#9f9f9f" wrapText="false">
@@ -21,20 +21,32 @@
           </font>
         </Label>
             <Button fx:id="loginButton" layoutX="32.0" layoutY="267.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Login" onAction="#tryLogon" />
-            <Button fx:id="createNewAccount" accessibleRole="CONTEXT_MENU" blendMode="DIFFERENCE" contentDisplay="TOP" graphicTextGap="44.0" layoutX="32.0" layoutY="339.0" mnemonicParsing="false" text="create new account" onAction="#registermyaccount">
-               <cursor>
+            <Button fx:id="createNewAccount"  blendMode="DIFFERENCE"   layoutX="32.0" layoutY="390.0" mnemonicParsing="false"  onAction="#registermyaccount">
+                <graphic>
+                    <ImageView fitHeight="80.0" fitWidth="80.0" >
+                <image>
+                    <Image url="/images/newaccount.jpg"  />
+                </image>
+                    </ImageView>
+                </graphic>
+                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <ImageView fitHeight="400.0" fitWidth="331.0" layoutX="304.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="600.0" fitWidth="450.0" layoutX="304.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="https://cdn2.iconfinder.com/data/icons/fitness-cartoon-2-1/512/g29909-512.png" />
+                  <Image url="/images/1523877550-03.png" />
                </image>
             </ImageView>
-            <Label layoutX="32.0" layoutY="115.0" text="Username" textOverrun="LEADING_ELLIPSIS" />
-            <Label layoutX="32.0" layoutY="182.0" text="Password" />
-            <TextField fx:id="userName" layoutX="32.0" layoutY="132.0" />
-            <PasswordField fx:id="password" layoutX="32.0" layoutY="200.0" />
+          <ImageView fitHeight="600.0" fitWidth="450.0" layoutX="200.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                  <Image url="/images/wodi.JPG" />
+              </image>
+            </ImageView>
+            <Label layoutX="32.0" layoutY="115.0" text="eMail Address" textOverrun="LEADING_ELLIPSIS" id="texts"/>
+            <Label layoutX="32.0" layoutY="182.0" text="Password" id="texts" />
+            <TextField  fx:id="userName" layoutX="32.0" layoutY="132.0" />
+            <PasswordField   fx:id="password" layoutX="32.0" layoutY="200.0" />
       </children>
     </AnchorPane>
   </children>
