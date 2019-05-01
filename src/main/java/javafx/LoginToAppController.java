@@ -51,7 +51,11 @@ public class LoginToAppController   {
              }
         };
 
+         public  void  clearValues() {
+             userName.clear();
+             password.clear();
 
+}
     public void registermyaccount() throws Exception{
         {
             closeWindows();
@@ -64,14 +68,12 @@ public class LoginToAppController   {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/RegisterFrom.fxml"));
             VBox root1 = (VBox) fxmlLoader.load();
             Stage stage = new Stage();
-            stage.initModality(Modality.APPLICATION_MODAL);
-            stage.initStyle(StageStyle.UNDECORATED);
             mainRegisterWindow.getChildren().addAll(t,root1);
-            Scene scene = new Scene(mainRegisterWindow);
+            Scene scene = new Scene(mainRegisterWindow,800,600);
             stage.setScene(scene);
             scene.getStylesheets().add("/MistSilverSkin.css");
             stage.setTitle("Workout Activity Diary - Registration Form");
-            stage.initStyle(StageStyle.DECORATED);
+            stage.setResizable(false);
             RegStage = stage;
             stage.show();
 

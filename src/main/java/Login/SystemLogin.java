@@ -1,7 +1,7 @@
 package Login;
 
 import Connections.JdbcDbData;
-import javafx.ActionScreenController;
+import javafx.StartAction;
 import javafx.scene.control.Alert;
 
 import java.sql.PreparedStatement;
@@ -14,7 +14,7 @@ public class SystemLogin extends JdbcDbData {
 
     public static int sessionId;
 
-    public static int run(String loginname, String password) throws Exception {
+    public static int run(String emailaddress, String password) throws Exception {
         try {
             JdbcDbDataa();
         } catch (ClassNotFoundException e) {
@@ -22,23 +22,24 @@ public class SystemLogin extends JdbcDbData {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        PreparedStatement stUser = conn.prepareStatement("select loginname from UserPassword where loginname =?");
-        stUser.setString(1, loginname);
+        PreparedStatement stUser = conn.prepareStatement("select emailaddress from UserPassword where emailaddress =?");
+        stUser.setString(1, emailaddress);
         ResultSet rsUser = stUser.executeQuery();
         if (rsUser.next()) {
-            rsUser.getString("loginname");
-            PreparedStatement stPassword = conn.prepareStatement("select password from UserPassword where loginname=?");
-            stPassword.setString(1, loginname);
+            rsUser.getString("emailaddress");
+            PreparedStatement stPassword = conn.prepareStatement("select password from UserPassword where emailaddress=?");
+            stPassword.setString(1, emailaddress);
             ResultSet rsPassword = stPassword.executeQuery();
             if (rsPassword.next())
                 if (password.equals(rsPassword.getString("password"))) {
-                    System.out.println("welcome back " + loginname);
-                    PreparedStatement stId = conn.prepareStatement("select id from UserPassword where loginname =?");
-                    stId.setString(1, loginname);
+                    System.out.println("welcome back " + emailaddress);
+                    PreparedStatement stId = conn.prepareStatement("select id from UserPassword where emailaddress =?");
+                    stId.setString(1, emailaddress);
                     ResultSet rsId = stId.executeQuery();
                      while(rsId.next()) {
                          sessionId = rsId.getInt("id");
-                         ActionScreenController actionScreenController = new ActionScreenController();
+                         StartAction startAction = new StartAction();
+                         startAction.ActionScreenControllerStartOne();
                         return rsId.getInt("id");
                     }
                 }

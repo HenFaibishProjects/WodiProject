@@ -40,7 +40,7 @@
                         <Font size="18.0" />
                     </font>
                 </Label>
-                <Label layoutX="22.0" layoutY="60.0" text="eMail Address" />
+                <Label layoutX="22.0" layoutY="60.0" text="Email Address" />
                 <Label layoutX="22.0" layoutY="95.0" text="Password" />
 
 
@@ -55,13 +55,13 @@
                         <Image url="/images/1523877550-03.png" />
                     </image>
                 </ImageView>
-                <Button id="backToLogin" fx:id="backToLogin" layoutX="367.0" layoutY="320.0" mnemonicParsing="false" onAction="#backToLoginAction" text="Back To Login" />
+                <Button  fx:id="backToLogin" layoutX="367.0" layoutY="320.0" prefHeight="25.0" prefWidth="185.0"  id="bevel-grey" onAction="#backToLoginAction" text="Back To Login" />
 
 
                 <Label layoutX="22.0" layoutY="231.0" text="Gender" />
-                <Button id="theregister" fx:id="theregister" layoutX="504.0" layoutY="320.0" mnemonicParsing="false" onAction="#registermyaccount" text="Register My Account" />
+                <Button  fx:id="theregister" layoutX="560.0" layoutY="320.0" prefHeight="25.0" prefWidth="185.0"  id="bevel-grey" onAction="#registermyaccount" text="Register My Account" />
                 <Label layoutX="21.0" layoutY="127.0" text="Confirm Password" />
-                <Button id="exitprogram" fx:id="exitprogram" layoutX="465.0" layoutY="356.0" mnemonicParsing="false" onAction="#exitTheProgram" text="Exit"/>
+                <Button  fx:id="exitprogram" layoutX="465.0" layoutY="400.0" prefHeight="25.0" prefWidth="185.0"  id="bevel-grey" onAction="#exitTheProgram" text="Exit"/>
             </children>
             <cursor>
                 <Cursor fx:constant="DEFAULT" />

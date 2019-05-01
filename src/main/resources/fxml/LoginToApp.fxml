@@ -20,19 +20,8 @@
             <Font size="18.0" />
           </font>
         </Label>
-            <Button fx:id="loginButton" layoutX="32.0" layoutY="267.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Login" onAction="#tryLogon" />
-            <Button fx:id="createNewAccount"  blendMode="DIFFERENCE"   layoutX="32.0" layoutY="390.0" mnemonicParsing="false"  onAction="#registermyaccount">
-                <graphic>
-                    <ImageView fitHeight="80.0" fitWidth="80.0" >
-                <image>
-                    <Image url="/images/newaccount.jpg"  />
-                </image>
-                    </ImageView>
-                </graphic>
-                <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
+            <Button fx:id="loginButton"         layoutX="32.0" layoutY="267.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Login"              id="loginButtons" onAction="#tryLogon" />
+            <Button fx:id="createNewAccount"    layoutX="32.0" layoutY="390.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="185.0" text="Create New Account" id="bevel-grey" onAction="#registermyaccount" />
             <ImageView fitHeight="600.0" fitWidth="450.0" layoutX="304.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="/images/1523877550-03.png" />
@@ -43,7 +32,7 @@
                   <Image url="/images/wodi.JPG" />
               </image>
             </ImageView>
-            <Label layoutX="32.0" layoutY="115.0" text="eMail Address" textOverrun="LEADING_ELLIPSIS" id="texts"/>
+            <Label layoutX="32.0" layoutY="115.0" text="Email Address" textOverrun="LEADING_ELLIPSIS" id="texts"/>
             <Label layoutX="32.0" layoutY="182.0" text="Password" id="texts" />
             <TextField  fx:id="userName" layoutX="32.0" layoutY="132.0" />
             <PasswordField   fx:id="password" layoutX="32.0" layoutY="200.0" />

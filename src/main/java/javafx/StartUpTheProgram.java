@@ -6,6 +6,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 
 public class StartUpTheProgram extends Application  {
@@ -23,6 +24,7 @@ public class StartUpTheProgram extends Application  {
         stage.setTitle("Workout Activity Diary");
         scene.getStylesheets().add("/MistSilverSkin.css");
         stage.setScene(scene);
+        stage.setResizable(false);
         Pstage = stage;
         stage.show();
 
@@ -30,11 +32,12 @@ public class StartUpTheProgram extends Application  {
     }
 
     public static void closeWindow() {
-        Pstage.getScene().getWindow().hide();
+        Pstage.close();
     }
 
     public static void OpenWindow() {
         Pstage.show();
+
     }
 }
 

@@ -18,8 +18,7 @@
 }
 #texts {
     font-family: Gill Sans, Verdana;
-    font-size: 11px;
-    line-height: 14px;
+    font-size: 5px;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: bold;
@@ -27,7 +26,33 @@
 
 #b1 {
     -fx-text-fill:white;
-    -fx-padding: 15 30 15 30;
+    -fx-content-display: top;
+    -fx-font-family: "Helvetica";
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+
+    -fx-background-color:
+            linear-gradient(#686868 0%, #232723 25%, #373837 75%, #757575 100%);
+    -fx-background-insets: 0;
+    -fx-background-radius: 9;
+}
+
+#b1:hover {
+    -fx-text-fill:black;
+    -fx-content-display: top;
+    -fx-font-family: "Helvetica";
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+
+    -fx-background-color:
+            linear-gradient(#ffffff 0%, #ffffff 25%, #ffffff 75%, #ffffff 100%);
+    -fx-background-insets: 0;
+    -fx-background-radius: 9;
+}
+
+#b1r {
+    -fx-text-fill:white;
+    -fx-content-display: top;
     -fx-font-family: "Helvetica";
     -fx-font-size: 18px;
     -fx-font-weight: bold;
@@ -38,6 +63,76 @@
     -fx-background-radius: 9;
 }
 
+#b1r:hover {
+    -fx-text-fill:back;
+    -fx-content-display: top;
+    -fx-font-family: "Helvetica";
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+
+    -fx-background-color:
+            linear-gradient(#ffffff 0%, #ffffff 25%, #ffffff 75%, #ffffff 100%);
+    -fx-background-insets: 0;
+    -fx-background-radius: 9;
+}
+
+
+#b11 {
+    -fx-text-fill:white;
+    -fx-content-display: top;
+    -fx-font-family: "Helvetica";
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+
+    -fx-background-color:
+            linear-gradient(#686868 0%, #232723 25%, #d1d9d6 75%, #757575 100%);
+    -fx-background-insets: 0;
+    -fx-background-radius: 9;
+}
+
+#b11i {
+    -fx-text-fill:white;
+    -fx-content-display: top;
+    -fx-font-family: "Helvetica";
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+
+    -fx-background-color:
+            linear-gradient(#686868 0%, #232723 25%, #d1d9d6 75%, #757575 100%);
+    -fx-background-insets: 0;
+    -fx-background-radius: 9;
+}
+
+
+#b11:hover {
+    -fx-text-fill: #000000;
+    -fx-content-display: top;
+    -fx-font-family: "Helvetica";
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+
+    -fx-background-color:
+            linear-gradient(#ffffff 0%, #ffffff 25%, #ffffff 75%, #ffffff 100%);
+    -fx-background-insets: 0;
+    -fx-background-radius: 9;
+}
+
+#b11i:hover {
+    -fx-text-fill: #000000;
+    -fx-content-display: top;
+    -fx-font-family: "Helvetica";
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+
+    -fx-background-color:
+            linear-gradient(#ffffff 100%, #ffffff 50%, #ffffff 50%, #ffffff 100%);
+    -fx-background-insets: 0;
+    -fx-background-radius: 9;
+}
+
+
+
+
 #b2 {
     -fx-text-fill:white;
     -fx-padding: 15 30 15 30;
@@ -46,7 +141,7 @@
     -fx-font-weight: bold;
 
     -fx-background-color:
-            linear-gradient(#686868 0%, #232723 25%, #373837 75%, #757575 100%),
+            linear-gradient(#425b68 0%, #252719 25%, #171838 75%, #2c3875 100%),
             linear-gradient(#020b02, #3a3a3a);
     -fx-background-insets: 0,1;
     -fx-background-radius: 9,8;
@@ -65,6 +160,36 @@
             linear-gradient(#9d9e9d 0%, #6b6a6b 20%, #343534 80%, #242424 100%);
     -fx-background-insets: 0,1,4;
     -fx-background-radius: 9,8,5;
+}
+
+
+#lion {
+    -fx-background-color:
+            rgba(199, 232, 67, 0.08),
+            linear-gradient(#9a9a9a, #909090),
+            linear-gradient(#6e706f 0%, #c1c1c1 50%, #7a7a7a 51%, #969998 100%);
+    -fx-background-insets: 0 0 -1 0,0,1;
+    -fx-background-radius: 5,5,4;
+    -fx-padding: 3 30 3 30;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+}
+
+
+
+#loginButtons {
+    -fx-background-radius: 5,5,4;
+    -fx-padding: 3 30 3 30;
+    -fx-text-fill: black;
+    -fx-font-size: 16px;
+}
+
+#bevel-grey {
+    -fx-background-radius: 8,7,6;
+    -fx-background-insets: 0,1,2;
+    -fx-text-fill: black;
+    -fx-font-size: 17px;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
 }
 
 #b4 {

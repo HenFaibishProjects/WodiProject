@@ -1,9 +1,19 @@
 package javafx;
 
+import Login.SystemLogin;
 import javafx.application.Application;
+import javafx.application.Platform;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.MenuButton;
+import javafx.scene.control.MenuItem;
+import javafx.scene.effect.BoxBlur;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
@@ -11,33 +21,62 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-public class ActionScreenController  {
+import java.io.IOException;
 
-    public static Stage ActionStage;
+public class ActionScreenController {
+    @FXML
+    public Button PersonalSettings;
+    @FXML
+    public Button ViewonCalendar;
+    @FXML
+    public Button AboutSoftware;
+    @FXML
+    public Button WorkoutStatictics;
+    @FXML
+    public Button Recomendetions;
+    @FXML
+    public Button Exit;
+    @FXML
+    public Button Logout;
+    @FXML
+    public MenuButton AddGymWorkout;
+    @FXML
+    public MenuItem AbsWorkout;
+    @FXML
+    public MenuItem DorsiWorkout;
+    @FXML
+    public MenuButton Incdicators;
+    @FXML
+    public MenuItem AddNewIndicator;
+    @FXML
+    public MenuItem ViewOldIndicators;
+    @FXML
+    public MenuButton AddMAWorkout;
+    @FXML
+    public MenuItem bjj;
+    @FXML
+    public MenuItem bjjNoGi;
+
+    public static Stage actionStage;
+
+    public void exitTheProgram(ActionEvent actionEvent) {
+        Platform.exit();
+    }
 
 
-
-    public ActionScreenController() throws Exception {
-        VBox mainRegisterWindow = new VBox();
-        mainRegisterWindow.setAlignment(Pos.TOP_CENTER);
-        Text t = new Text();
-        t.setFill(Color.ORANGERED);
-        t.setText("W-A-D Action");
-        t.setStyle("-fx-font: 34 arial;");
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/ActionScreen.fxml"));
-        VBox root1 = (VBox) fxmlLoader.load();
+    public void logOut(ActionEvent actionEvent) throws IOException {
+        SystemLogin.sessionId = 0;
+        actionStage.close();
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/LoginToApp.fxml"));
+        Scene scene = new Scene(root, 800, 600);
         Stage stage = new Stage();
-        stage.initModality(Modality.APPLICATION_MODAL);
-        stage.initStyle(StageStyle.UNDECORATED);
-        mainRegisterWindow.getChildren().addAll(t,root1);
-        Scene scene = new Scene(mainRegisterWindow, 800, 600);
-        stage.setScene(scene);
-        scene.getStylesheets().add("/MistSilverSkin.css");
         stage.setTitle("Workout Activity Diary");
-        stage.initStyle(StageStyle.DECORATED);
-        ActionStage=stage;
-        StartUpTheProgram.closeWindow();
+        scene.getStylesheets().add("/MistSilverSkin.css");
+        stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
 
     }
 }
+
+

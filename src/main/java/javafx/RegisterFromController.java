@@ -6,12 +6,17 @@ import hr.SendMail;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.effect.DropShadow;
+import javafx.stage.Stage;
 import org.apache.commons.validator.routines.EmailValidator;
 
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
+import java.io.IOException;
 
 public class RegisterFromController  {
 
@@ -56,10 +61,20 @@ public class RegisterFromController  {
     }
 
 
-    public  void backToLoginAction(){
+    public  void backToLoginAction() throws IOException {
         LoginToAppController.closeRegWindow();
-        StartUpTheProgram.OpenWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/LoginToApp.fxml"));
+        Scene scene = new Scene(root, 800, 600);
+        Stage stage = new Stage();
+        stage.setTitle("Workout Activity Diary");
+        scene.getStylesheets().add("/MistSilverSkin.css");
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.show();
+
+
     }
+
 
     private void verifyNonEmptyValues(ComboBox maleFemaleObject,String theusername, String thepassword, String theConfirmpassword, String thefirstname, String thelastname, String thestreet , String theCity) throws AddressException {
 
