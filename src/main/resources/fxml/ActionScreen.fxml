@@ -110,7 +110,7 @@
                         </ImageView>
                     </graphic>
                     <items>
-                        <MenuItem fx:id="AddNewIndicator" mnemonicParsing="false" text="Add New Indicator" />
+                        <MenuItem fx:id="AddNewIndicator" mnemonicParsing="false" text="Add New Indicator" onAction="#AddIndicesPage"/>
                         <MenuItem fx:id="ViewOldIndicators" mnemonicParsing="false" text="View Old Indicators" />
                     </items>
                 </MenuButton>

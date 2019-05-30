@@ -98,7 +98,7 @@ public class RegisterFromController  {
                     }
                     else {
                     setRegistermyaccount();
-                        SendMail.sendTheEmail("WodiSoftware@gmail.com",theusername,"Welcome To Wodi","We are welcome you with Wodi account");
+                       // SendMail.sendTheEmail("WodiSoftware@gmail.com",theusername,"Welcome To Wodi","We are welcome you with Wodi account");
                 }
             }
             }

@@ -58,6 +58,7 @@ public class ActionScreenController {
     public MenuItem bjjNoGi;
 
     public static Stage actionStage;
+    public static Stage indicatorStage;
 
     public void exitTheProgram(ActionEvent actionEvent) {
         Platform.exit();
@@ -74,6 +75,20 @@ public class ActionScreenController {
         scene.getStylesheets().add("/MistSilverSkin.css");
         stage.setScene(scene);
         stage.setResizable(false);
+        stage.show();
+
+    }
+
+    public void AddIndicesPage(ActionEvent actionEvent) throws IOException {
+        actionStage.close();
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/AddIndices.fxml"));
+        Scene scene = new Scene(root, 800, 600);
+        Stage stage = new Stage();
+        stage.setTitle("Add Indices");
+        scene.getStylesheets().add("/MistSilverSkin.css");
+        stage.setScene(scene);
+        stage.setResizable(false);
+        indicatorStage = stage;
         stage.show();
 
     }

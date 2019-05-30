@@ -17,8 +17,8 @@ public abstract class JdbcDbData  {
     protected static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
     protected static final String DB_URL = "jdbc:mysql://localhost:3306/wido?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
     //protected static final String DB_URL = "jdbc:mysql://localhost/mao";
-    protected static final String USER = "root";
-    protected static final String PASS = "root";
+    protected static final String USER = "wodi";
+    protected static final String PASS = "wodi";
     protected static  Connection conn;
     static DatabaseMetaData metadata;
     static PreparedStatement ps = null ;
